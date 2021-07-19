@@ -1,0 +1,63 @@
+    <!doctype html>
+    <html>
+      <head></head>
+    <body>
+    <script>
+ 
+      var button = document.getElementById("searchBtn");
+      button.addEventListener("click", test);
+
+      var question = document.getElementById("question");
+      var answer = document.getElementById("answer");
+
+      var create = document.getElementById("createTest");
+      create.addEventListener("click", num);
+
+      var container = document.getElementById("mainContainer");
+      var card = document.getElementById("card");
+
+      //var data <?!= number ?>;
+
+      function createF(x){
+
+       for(var i = 0; i < x; i++){
+        var div1 = document.createElement("div");
+        div1.className = "card-header";
+        div1.innerText = "Test";
+        div1.setAttribute("align", "left");
+
+        var div2 = document.createElement("div");
+        div2.className = "card-body";
+        div2.innerText = "Test2"
+        div2.setAttribute("align", "left");
+
+        card.appendChild(div1);
+        card.appendChild(div2);
+        container.appendChild(card);
+        document.body.appendChild(container);
+       }
+
+      }
+
+
+      function test(){
+
+        var search = document.getElementById("searchTxt").value;
+        console.log(search);
+        
+        //question.innerText = search; 
+       
+       
+       google.script.run.search(createF());
+       //window.open("https://script.google.com/a/macros/globalpay.com/s/AKfycbzmZiiJ5nggZXgwj6KTeVRc97XF0m3q6jzlGfmSY3g3/dev",'_top');
+       
+ 
+
+      }
+
+    </script>
+
+
+  
+</body>
+</html>
